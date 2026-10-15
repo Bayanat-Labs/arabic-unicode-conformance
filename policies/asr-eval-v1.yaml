@@ -1,0 +1,33 @@
+# asr-eval-v1 policy spec, Arabic Unicode Conformance Suite 0.1.0 (CC BY 4.0, Bayanat Labs)
+policy_id: asr-eval-v1
+family: arabic-normalize
+title: Arabic normalisation for speech-recognition evaluation, version 1
+definition: 'bayanat-norm-v1 plus taa marbuta folded to heh, punctuation replaced by spaces and whitespace collapsed.
+  Intended for WER and CER scoring. Lossy: use only for scoring, never as a stored text field.'
+sha256: 5d866146536a23b90c0882044dae5f55f2484f0635e206828246eabeb69668de
+library: arabic-normalize 0.1.0
+library_commit: 3ad22326a66596e8dc413321017251eed6e60439
+library_repository: https://github.com/Bayanat-Labs/arabic-normalize
+spec: arabic-normalize-spec-1
+unicode_version: 18.0.0
+unicode_form: NFC
+stages:
+  reject_invalid: drop
+  strip_controls: strip
+  presentation_forms: map
+  ligatures_honorific: flag
+  bidi_zw: strip-except-meaningful
+  tatweel: strip
+  diacritics: strip
+  quranic_marks: strip
+  superscript_alef: strip
+  alef_variants: map
+  alef_maqsura: to-yeh
+  taa_marbuta: to-heh
+  hamza_carriers: keep
+  persian_urdu_letters: keep
+  digits: ascii
+  punctuation: strip
+  whitespace: collapse
+  latin_case: keep
+source: https://github.com/Bayanat-Labs/arabic-normalize/blob/3ad22326a66596e8dc413321017251eed6e60439/src/arabic_normalize/policies/asr-eval-v1.json

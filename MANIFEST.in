@@ -1,0 +1,3 @@
+include LICENSE LICENSE-data NOTICE NOTICE-unicode.txt README.md CHANGELOG.md CITATION.cff
+recursive-include src/arabic_unicode_conformance/data *.jsonl *.json
+recursive-include src/arabic_unicode_conformance/harness *.py *.mjs

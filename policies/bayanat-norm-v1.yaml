@@ -1,0 +1,35 @@
+# bayanat-norm-v1 policy spec, Arabic Unicode Conformance Suite 0.1.0 (CC BY 4.0, Bayanat Labs)
+policy_id: bayanat-norm-v1
+family: arabic-normalize
+title: Bayanat Labs standard Arabic text normalisation, version 1
+definition: A normalisation policy for text_norm columns. NFC plus mapping of Arabic presentation forms; invisible
+  controls removed except a meaningful ZWNJ or emoji ZWJ; tatweel, harakat, Quranic marks and superscript alef removed;
+  alef variants to bare alef; alef maqsura to yeh; taa marbuta kept and flagged; Arabic-Indic and Extended Arabic-Indic
+  digits to ASCII; honorific ligatures kept and flagged.
+sha256: ebdb82000d0762a65120ffa9311bc6f01b481b19d4348ea5bedb3ab23d759321
+library: arabic-normalize 0.1.0
+library_commit: 3ad22326a66596e8dc413321017251eed6e60439
+library_repository: https://github.com/Bayanat-Labs/arabic-normalize
+spec: arabic-normalize-spec-1
+unicode_version: 18.0.0
+unicode_form: NFC
+stages:
+  reject_invalid: drop
+  strip_controls: strip
+  presentation_forms: map
+  ligatures_honorific: flag
+  bidi_zw: strip-except-meaningful
+  tatweel: strip
+  diacritics: strip
+  quranic_marks: strip
+  superscript_alef: strip
+  alef_variants: map
+  alef_maqsura: to-yeh
+  taa_marbuta: flag
+  hamza_carriers: keep
+  persian_urdu_letters: keep
+  digits: ascii
+  punctuation: keep
+  whitespace: keep
+  latin_case: keep
+source: https://github.com/Bayanat-Labs/arabic-normalize/blob/3ad22326a66596e8dc413321017251eed6e60439/src/arabic_normalize/policies/bayanat-norm-v1.json

@@ -1,0 +1,33 @@
+# raw-safe-v1 policy spec, Arabic Unicode Conformance Suite 0.1.0 (CC BY 4.0, Bayanat Labs)
+policy_id: raw-safe-v1
+family: arabic-normalize
+title: Raw-safe cleaning without letter changes, version 1
+definition: NFC plus removal of invalid code points and invisible controls (a meaningful ZWNJ or emoji ZWJ is kept).
+  No letter, mark, digit or punctuation is changed. Recipe for text_diac columns and for display or legal uses.
+sha256: 57c3d9f03fb9b6854f2527cd1e8a47cadc266f47f02dda94652306dacea03bb5
+library: arabic-normalize 0.1.0
+library_commit: 3ad22326a66596e8dc413321017251eed6e60439
+library_repository: https://github.com/Bayanat-Labs/arabic-normalize
+spec: arabic-normalize-spec-1
+unicode_version: 18.0.0
+unicode_form: NFC
+stages:
+  reject_invalid: drop
+  strip_controls: strip
+  presentation_forms: keep
+  ligatures_honorific: keep
+  bidi_zw: strip-except-meaningful
+  tatweel: keep
+  diacritics: keep
+  quranic_marks: keep
+  superscript_alef: keep
+  alef_variants: keep
+  alef_maqsura: keep
+  taa_marbuta: keep
+  hamza_carriers: keep
+  persian_urdu_letters: keep
+  digits: keep
+  punctuation: keep
+  whitespace: keep
+  latin_case: keep
+source: https://github.com/Bayanat-Labs/arabic-normalize/blob/3ad22326a66596e8dc413321017251eed6e60439/src/arabic_normalize/policies/raw-safe-v1.json

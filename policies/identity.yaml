@@ -1,0 +1,6 @@
+# identity policy spec, Arabic Unicode Conformance Suite 0.1.0 (CC BY 4.0, Bayanat Labs)
+policy_id: identity
+family: unicode
+title: Identity
+definition: The output is the input, code point for code point. Input bytes that are not valid UTF-8 are rejected.
+source: definition

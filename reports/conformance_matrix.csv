@@ -1,0 +1,21 @@
+implementation,adapter,version,pipeline,call,policy,relation,cases,passed,pass_rate,must_cases,must_passed,must_pass_rate,token_pass_rate,not_applicable,errors,idempotent_rate,output_nfc_rate,must_preserve_rate
+Python unicodedata.normalize,python-unicodedata,3.14.7,py-nfc,"unicodedata.normalize('NFC', s)",nfc,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+Python unicodedata.normalize,python-unicodedata,3.14.7,py-nfkc,"unicodedata.normalize('NFKC', s)",nfkc,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+Node.js String.prototype.normalize (ICU),icu-node,78.2,icu-nfc,s.normalize('NFC'),nfc,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+Node.js String.prototype.normalize (ICU),icu-node,78.2,icu-nfkc,s.normalize('NFKC'),nfkc,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+arabic-normalize (Python),arabic-normalize-py,0.1.0,an-py-raw-safe-v1,"arabic_normalize.normalize(s, 'raw-safe-v1')",raw-safe-v1,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+arabic-normalize (Python),arabic-normalize-py,0.1.0,an-py-bayanat-norm-v1,"arabic_normalize.normalize(s, 'bayanat-norm-v1')",bayanat-norm-v1,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+arabic-normalize (Python),arabic-normalize-py,0.1.0,an-py-asr-eval-v1,"arabic_normalize.normalize(s, 'asr-eval-v1')",asr-eval-v1,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+arabic-normalize (JavaScript),arabic-normalize-js,0.1.0,an-js-raw-safe-v1,"normalize(s, 'raw-safe-v1')",raw-safe-v1,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+arabic-normalize (JavaScript),arabic-normalize-js,0.1.0,an-js-bayanat-norm-v1,"normalize(s, 'bayanat-norm-v1')",bayanat-norm-v1,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+arabic-normalize (JavaScript),arabic-normalize-js,0.1.0,an-js-asr-eval-v1,"normalize(s, 'asr-eval-v1')",asr-eval-v1,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+arabic-normalize (JavaScript),arabic-normalize-js,0.1.0,an-js-nfc,"normalizeForm(s, 'NFC')",nfc,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+arabic-normalize (JavaScript),arabic-normalize-js,0.1.0,an-js-nfkc,"normalizeForm(s, 'NFKC')",nfkc,conformance,300,300,1.0,264,264,1.0,1.0,0,3,1.0,1.0,1.0
+CAMeL Tools,camel-tools,1.6.0,camel-unicode-nfc,"normalize_unicode(s, compatibility=False)",nfc,agreement,297,297,1.0,261,261,1.0,1.0,3,0,1.0,1.0,1.0
+CAMeL Tools,camel-tools,1.6.0,camel-unicode,normalize_unicode(s),nfkc,agreement,297,295,0.9933,261,260,0.9962,0.9933,3,0,1.0,1.0,1.0
+CAMeL Tools,camel-tools,1.6.0,camel-norm,normalize_alef_maksura_ar(normalize_alef_ar(dediac_ar(normalize_unicode(s)))),bayanat-norm-v1,agreement,297,178,0.5993,261,162,0.6207,0.6229,3,0,0.9899,0.9898,1.0
+CAMeL Tools,camel-tools,1.6.0,camel-norm-teh,normalize_teh_marbuta_ar(<camel-norm>),asr-eval-v1,agreement,297,156,0.5253,261,143,0.5479,0.5556,3,0,0.9899,0.9898,1.0
+PyArabic,pyarabic,0.6.15,pyarabic-norm,normalize_alef(strip_tatweel(strip_diacritics(normalize_ligature(s)))),bayanat-norm-v1,agreement,297,177,0.596,261,155,0.5939,0.596,3,0,1.0,0.9966,1.0
+PyArabic,pyarabic,0.6.15,pyarabic-norm-teh,normalize_teh(<pyarabic-norm>),asr-eval-v1,agreement,297,146,0.4916,261,124,0.4751,0.532,3,0,1.0,0.9966,1.0
+Whisper BasicTextNormalizer,whisper-basic,0.1.15,whisper-basic,BasicTextNormalizer()(s),asr-eval-v1,agreement,297,79,0.266,261,75,0.2874,0.4074,3,0,1.0,1.0,1.0
+Whisper BasicTextNormalizer,whisper-basic,0.1.15,whisper-basic-rd,BasicTextNormalizer(remove_diacritics=True)(s),asr-eval-v1,agreement,297,132,0.4444,261,120,0.4598,0.4983,3,0,1.0,1.0,1.0

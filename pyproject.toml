@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arabic-unicode-conformance"
+dynamic = ["version"]
+description = "Arabic Unicode conformance suite: test cases with expected outputs under named normalisation policies, and a runner for Arabic text normalisers. By Bayanat Labs."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0 AND CC-BY-4.0"
+license-files = ["LICENSE", "LICENSE-data", "NOTICE", "NOTICE-unicode.txt"]
+authors = [{ name = "Bayanat Labs" }]
+dependencies = []
+keywords = ["arabic", "arabic-nlp", "unicode", "normalization", "text-normalization", "conformance", "test-suite", "wer"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Natural Language :: Arabic",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Testing",
+  "Topic :: Text Processing :: Linguistic",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "hypothesis>=6"]
+build = ["pyyaml>=6"]
+
+[project.urls]
+Homepage = "https://github.com/Bayanat-Labs/arabic-unicode-conformance"
+Repository = "https://github.com/Bayanat-Labs/arabic-unicode-conformance"
+Issues = "https://github.com/Bayanat-Labs/arabic-unicode-conformance/issues"
+Dataset = "https://huggingface.co/datasets/Bayanat-Labs/arabic-unicode-conformance"
+
+[project.scripts]
+arabic-unicode-conformance = "arabic_unicode_conformance.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+packages = ["arabic_unicode_conformance", "arabic_unicode_conformance.data", "arabic_unicode_conformance.harness"]
+
+[tool.setuptools.package-data]
+"arabic_unicode_conformance.data" = ["*.jsonl", "*.json"]
+"arabic_unicode_conformance.harness" = ["*.py", "*.mjs"]
+
+[tool.setuptools.dynamic]
+version = { attr = "arabic_unicode_conformance._version.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"

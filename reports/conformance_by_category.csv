@@ -1,0 +1,21 @@
+implementation,adapter,version,pipeline,call,policy,relation,alef,bidi,confusables,diacritic_order,dialect_letters,digits,hamza,joiners,lam_alef,malformed,mixed_script,presentation_forms,punctuation,quranic,spaces,taa_marbuta,tatweel,yeh
+Python unicodedata.normalize,python-unicodedata,3.14.7,py-nfc,"unicodedata.normalize('NFC', s)",nfc,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Python unicodedata.normalize,python-unicodedata,3.14.7,py-nfkc,"unicodedata.normalize('NFKC', s)",nfkc,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Node.js String.prototype.normalize (ICU),icu-node,78.2,icu-nfc,s.normalize('NFC'),nfc,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+Node.js String.prototype.normalize (ICU),icu-node,78.2,icu-nfkc,s.normalize('NFKC'),nfkc,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+arabic-normalize (Python),arabic-normalize-py,0.1.0,an-py-raw-safe-v1,"arabic_normalize.normalize(s, 'raw-safe-v1')",raw-safe-v1,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+arabic-normalize (Python),arabic-normalize-py,0.1.0,an-py-bayanat-norm-v1,"arabic_normalize.normalize(s, 'bayanat-norm-v1')",bayanat-norm-v1,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+arabic-normalize (Python),arabic-normalize-py,0.1.0,an-py-asr-eval-v1,"arabic_normalize.normalize(s, 'asr-eval-v1')",asr-eval-v1,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+arabic-normalize (JavaScript),arabic-normalize-js,0.1.0,an-js-raw-safe-v1,"normalize(s, 'raw-safe-v1')",raw-safe-v1,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+arabic-normalize (JavaScript),arabic-normalize-js,0.1.0,an-js-bayanat-norm-v1,"normalize(s, 'bayanat-norm-v1')",bayanat-norm-v1,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+arabic-normalize (JavaScript),arabic-normalize-js,0.1.0,an-js-asr-eval-v1,"normalize(s, 'asr-eval-v1')",asr-eval-v1,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+arabic-normalize (JavaScript),arabic-normalize-js,0.1.0,an-js-nfc,"normalizeForm(s, 'NFC')",nfc,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+arabic-normalize (JavaScript),arabic-normalize-js,0.1.0,an-js-nfkc,"normalizeForm(s, 'NFKC')",nfkc,conformance,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+CAMeL Tools,camel-tools,1.6.0,camel-unicode-nfc,"normalize_unicode(s, compatibility=False)",nfc,agreement,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+CAMeL Tools,camel-tools,1.6.0,camel-unicode,normalize_unicode(s),nfkc,agreement,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.9231,1.0,1.0,1.0,1.0,1.0,1.0
+CAMeL Tools,camel-tools,1.6.0,camel-norm,normalize_alef_maksura_ar(normalize_alef_ar(dediac_ar(normalize_unicode(s)))),bayanat-norm-v1,agreement,0.8889,0.0,0.5833,0.8182,0.9333,0.0,0.8696,0.5,0.9286,0.4545,0.8,0.6923,0.9286,0.2778,0.4167,0.9,0.0,1.0
+CAMeL Tools,camel-tools,1.6.0,camel-norm-teh,normalize_teh_marbuta_ar(<camel-norm>),asr-eval-v1,agreement,0.8889,0.0,0.4167,0.8182,0.9333,0.0,0.8696,0.5,0.9286,0.4545,0.6,0.5385,0.0,0.2778,0.5,0.8,0.0,0.9444
+PyArabic,pyarabic,0.6.15,pyarabic-norm,normalize_alef(strip_tatweel(strip_diacritics(normalize_ligature(s)))),bayanat-norm-v1,agreement,0.9444,0.0,0.5,0.8636,0.9333,0.0833,0.6522,0.5556,0.5,0.3636,0.9,0.2692,0.9286,0.5556,1.0,0.9,0.8571,0.6111
+PyArabic,pyarabic,0.6.15,pyarabic-norm-teh,normalize_teh(<pyarabic-norm>),asr-eval-v1,agreement,0.9444,0.0,0.3333,0.8636,0.9333,0.0833,0.6522,0.5556,0.5,0.3636,0.7,0.2308,0.0,0.5556,0.0,0.8,0.8571,0.6111
+Whisper BasicTextNormalizer,whisper-basic,0.1.15,whisper-basic,BasicTextNormalizer()(s),asr-eval-v1,agreement,0.1667,0.0,0.3333,0.0,0.8,0.0,0.4348,0.2222,0.4286,0.0,0.3,0.4231,0.2143,0.0,0.75,0.3,0.0,0.6111
+Whisper BasicTextNormalizer,whisper-basic,0.1.15,whisper-basic-rd,BasicTextNormalizer(remove_diacritics=True)(s),asr-eval-v1,agreement,0.7222,0.0,0.3333,0.8182,0.9333,0.0,0.4348,0.2778,0.9286,0.2727,0.3,0.4231,0.3571,0.5556,0.8333,0.2,0.0,0.6111

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this suite, please cite it as below and name the policy id and policy hash you tested."
+type: software
+title: "Arabic Unicode Conformance Suite"
+version: "0.1.0"
+date-released: "2026-10-15"
+license: Apache-2.0
+repository-code: "https://github.com/Bayanat-Labs/arabic-unicode-conformance"
+url: "https://huggingface.co/datasets/Bayanat-Labs/arabic-unicode-conformance"
+authors:
+  - name: "Bayanat Labs"
+keywords:
+  - arabic
+  - arabic-nlp
+  - unicode
+  - text-normalization
+  - conformance-tests
+  - speech-recognition-evaluation
+abstract: "Test cases with exact expected outputs for Arabic text normalisation under six named policies (identity, nfc, nfkc, raw-safe-v1, bayanat-norm-v1, asr-eval-v1), a runner with adapters for several normalisers, and a conformance matrix. Cases and documentation CC BY 4.0; code Apache-2.0."

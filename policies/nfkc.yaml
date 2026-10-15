@@ -1,0 +1,7 @@
+# nfkc policy spec, Arabic Unicode Conformance Suite 0.1.0 (CC BY 4.0, Bayanat Labs)
+policy_id: nfkc
+family: unicode
+title: Unicode Normalization Form KC
+definition: 'UAX #15 compatibility decomposition, canonical ordering and canonical composition. Lone surrogates
+  and noncharacters pass through unchanged. Input bytes that are not valid UTF-8 are rejected.'
+source: Python unicodedata.normalize('NFKC'), Unicode 16.0.0

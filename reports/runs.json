@@ -1,0 +1,250 @@
+[
+ {
+  "adapter": "python-unicodedata",
+  "label": "Python unicodedata.normalize",
+  "versions": {
+   "tool": "Python unicodedata",
+   "version": "3.14.7",
+   "unicode": "16.0.0"
+  },
+  "pipelines": [
+   {
+    "id": "py-nfc",
+    "policy": "nfc",
+    "relation": "conformance",
+    "call": "unicodedata.normalize('NFC', s)"
+   },
+   {
+    "id": "py-nfkc",
+    "policy": "nfkc",
+    "relation": "conformance",
+    "call": "unicodedata.normalize('NFKC', s)"
+   }
+  ],
+  "runner": "arabic-unicode-conformance 0.1.0",
+  "runner_python": "3.14.7",
+  "runner_unicodedata": "16.0.0",
+  "platform": "macOS-26.6.2",
+  "cases": 300,
+  "seconds": 0.0
+ },
+ {
+  "adapter": "icu-node",
+  "label": "Node.js String.prototype.normalize (ICU)",
+  "versions": {
+   "node": "22.23.2",
+   "icu": "78.2",
+   "icu_unicode": "17.0",
+   "tool": "Node.js String.prototype.normalize (ICU)",
+   "version": "78.2"
+  },
+  "pipelines": [
+   {
+    "id": "icu-nfc",
+    "policy": "nfc",
+    "relation": "conformance",
+    "call": "s.normalize('NFC')"
+   },
+   {
+    "id": "icu-nfkc",
+    "policy": "nfkc",
+    "relation": "conformance",
+    "call": "s.normalize('NFKC')"
+   }
+  ],
+  "runner": "arabic-unicode-conformance 0.1.0",
+  "runner_python": "3.14.7",
+  "runner_unicodedata": "16.0.0",
+  "platform": "macOS-26.6.2",
+  "cases": 300,
+  "seconds": 0.28
+ },
+ {
+  "adapter": "arabic-normalize-py",
+  "label": "arabic-normalize (Python)",
+  "versions": {
+   "tool": "arabic-normalize (Python)",
+   "version": "0.1.0",
+   "unicode": "18.0.0",
+   "python": "3.14.7"
+  },
+  "pipelines": [
+   {
+    "id": "an-py-raw-safe-v1",
+    "policy": "raw-safe-v1",
+    "relation": "conformance",
+    "call": "arabic_normalize.normalize(s, 'raw-safe-v1')"
+   },
+   {
+    "id": "an-py-bayanat-norm-v1",
+    "policy": "bayanat-norm-v1",
+    "relation": "conformance",
+    "call": "arabic_normalize.normalize(s, 'bayanat-norm-v1')"
+   },
+   {
+    "id": "an-py-asr-eval-v1",
+    "policy": "asr-eval-v1",
+    "relation": "conformance",
+    "call": "arabic_normalize.normalize(s, 'asr-eval-v1')"
+   }
+  ],
+  "runner": "arabic-unicode-conformance 0.1.0",
+  "runner_python": "3.14.7",
+  "runner_unicodedata": "16.0.0",
+  "platform": "macOS-26.6.2",
+  "cases": 300,
+  "seconds": 0.06
+ },
+ {
+  "adapter": "arabic-normalize-js",
+  "label": "arabic-normalize (JavaScript)",
+  "versions": {
+   "node": "22.23.2",
+   "icu": "78.2",
+   "icu_unicode": "17.0",
+   "tool": "arabic-normalize (JavaScript)",
+   "version": "0.1.0",
+   "unicode": "18.0.0"
+  },
+  "pipelines": [
+   {
+    "id": "an-js-raw-safe-v1",
+    "policy": "raw-safe-v1",
+    "relation": "conformance",
+    "call": "normalize(s, 'raw-safe-v1')"
+   },
+   {
+    "id": "an-js-bayanat-norm-v1",
+    "policy": "bayanat-norm-v1",
+    "relation": "conformance",
+    "call": "normalize(s, 'bayanat-norm-v1')"
+   },
+   {
+    "id": "an-js-asr-eval-v1",
+    "policy": "asr-eval-v1",
+    "relation": "conformance",
+    "call": "normalize(s, 'asr-eval-v1')"
+   },
+   {
+    "id": "an-js-nfc",
+    "policy": "nfc",
+    "relation": "conformance",
+    "call": "normalizeForm(s, 'NFC')"
+   },
+   {
+    "id": "an-js-nfkc",
+    "policy": "nfkc",
+    "relation": "conformance",
+    "call": "normalizeForm(s, 'NFKC')"
+   }
+  ],
+  "runner": "arabic-unicode-conformance 0.1.0",
+  "runner_python": "3.14.7",
+  "runner_unicodedata": "16.0.0",
+  "platform": "macOS-26.6.2",
+  "cases": 300,
+  "seconds": 0.25
+ },
+ {
+  "adapter": "camel-tools",
+  "label": "CAMeL Tools",
+  "versions": {
+   "tool": "camel-tools",
+   "version": "1.6.0",
+   "python": "3.12.14",
+   "unicodedata": "15.0.0"
+  },
+  "pipelines": [
+   {
+    "id": "camel-unicode-nfc",
+    "policy": "nfc",
+    "relation": "agreement",
+    "call": "normalize_unicode(s, compatibility=False)"
+   },
+   {
+    "id": "camel-unicode",
+    "policy": "nfkc",
+    "relation": "agreement",
+    "call": "normalize_unicode(s)"
+   },
+   {
+    "id": "camel-norm",
+    "policy": "bayanat-norm-v1",
+    "relation": "agreement",
+    "call": "normalize_alef_maksura_ar(normalize_alef_ar(dediac_ar(normalize_unicode(s))))"
+   },
+   {
+    "id": "camel-norm-teh",
+    "policy": "asr-eval-v1",
+    "relation": "agreement",
+    "call": "normalize_teh_marbuta_ar(<camel-norm>)"
+   }
+  ],
+  "runner": "arabic-unicode-conformance 0.1.0",
+  "runner_python": "3.14.7",
+  "runner_unicodedata": "16.0.0",
+  "platform": "macOS-26.6.2",
+  "cases": 300,
+  "seconds": 0.77
+ },
+ {
+  "adapter": "pyarabic",
+  "label": "PyArabic",
+  "versions": {
+   "tool": "PyArabic",
+   "version": "0.6.15",
+   "python": "3.12.14",
+   "unicodedata": "15.0.0"
+  },
+  "pipelines": [
+   {
+    "id": "pyarabic-norm",
+    "policy": "bayanat-norm-v1",
+    "relation": "agreement",
+    "call": "normalize_alef(strip_tatweel(strip_diacritics(normalize_ligature(s))))"
+   },
+   {
+    "id": "pyarabic-norm-teh",
+    "policy": "asr-eval-v1",
+    "relation": "agreement",
+    "call": "normalize_teh(<pyarabic-norm>)"
+   }
+  ],
+  "runner": "arabic-unicode-conformance 0.1.0",
+  "runner_python": "3.14.7",
+  "runner_unicodedata": "16.0.0",
+  "platform": "macOS-26.6.2",
+  "cases": 300,
+  "seconds": 0.11
+ },
+ {
+  "adapter": "whisper-basic",
+  "label": "Whisper BasicTextNormalizer",
+  "versions": {
+   "tool": "whisper-normalizer",
+   "version": "0.1.15",
+   "python": "3.12.14",
+   "unicodedata": "15.0.0"
+  },
+  "pipelines": [
+   {
+    "id": "whisper-basic",
+    "policy": "asr-eval-v1",
+    "relation": "agreement",
+    "call": "BasicTextNormalizer()(s)"
+   },
+   {
+    "id": "whisper-basic-rd",
+    "policy": "asr-eval-v1",
+    "relation": "agreement",
+    "call": "BasicTextNormalizer(remove_diacritics=True)(s)"
+   }
+  ],
+  "runner": "arabic-unicode-conformance 0.1.0",
+  "runner_python": "3.14.7",
+  "runner_unicodedata": "16.0.0",
+  "platform": "macOS-26.6.2",
+  "cases": 300,
+  "seconds": 0.09
+ }
+]
